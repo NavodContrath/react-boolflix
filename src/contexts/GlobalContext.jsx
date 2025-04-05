@@ -6,6 +6,7 @@ console.log(api_key)
 function GlobalProvider({ children }) {
     const [movies, setMovies] = useState([]);
     const [moviesName, setMoviesName] = useState("")
+    const [searchQuery, setSearchQuery] = useState("")
     const base_movies_api_url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${moviesName}`
     console.log(moviesName)
 
@@ -17,12 +18,12 @@ function GlobalProvider({ children }) {
                 setMovies(data.results)
             })
             .catch(err => console.log(err.message))
-    }, [moviesName])
+    }, [searchQuery])
     console.log(movies)
 
 
     return (
-        <GlobalContext.Provider value={{ movies, moviesName, setMoviesName }}>
+        <GlobalContext.Provider value={{ movies, moviesName, setMoviesName, setSearchQuery }}>
             {children}
         </GlobalContext.Provider>
     );
