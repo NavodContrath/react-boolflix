@@ -11,6 +11,7 @@ export default function MoviesPage() {
         zh: "/images/cn.svg",
         de: "/images/de.svg",
         cn: "/images/cn.svg",
+        hi: "/images/in.svg"
     }
     return (
         <>
@@ -28,7 +29,7 @@ export default function MoviesPage() {
                                         <img src={flagImage} alt={movie.original_language} width="30" height="20" className="my-3" />) : (
                                         <h5 className="card-text">{movie.original_language}</h5>)
                                     }
-                                    <h6> {parseInt(movie.vote_average)}</h6>
+                                    <h6> {parseInt(movie.vote_average / 2)}</h6>
                                 </div>
                             </div>
 
