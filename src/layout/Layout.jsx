@@ -21,12 +21,12 @@ export default function Layout() {
                                     <NavLink className="nav-link" to="/movies">Movies</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link " to="/contacts">Contacts</NavLink>
+                                    <NavLink className="nav-link " to="/series">Series</NavLink>
                                 </li>
                             </ul>
                             <div className="d-flex">
                                 <input className="form-control me-sm-2" type="text" placeholder="Search" value={moviesName} onChange={(e) => setMoviesName(e.target.value)} />
-                                <button className="btn btn-danger my-2 my-sm-0" type="button" onClick={() => setSearchQuery(moviesName)}>Search</button>
+                                <button className="btn btn-danger my-2 my-sm-0" type="button" onClick={() => setSearchQuery(moviesName)} >Search</button>
                             </div>
 
                         </div>
