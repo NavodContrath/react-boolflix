@@ -13,7 +13,7 @@ export default function MoviesPage() {
         cn: "/images/cn.svg",
         hi: "/images/in.svg"
     }
-
+    const rating = [1, 2, 3, 4, 5]
     return (
         <>
             <div className="container my-5">
@@ -33,6 +33,13 @@ export default function MoviesPage() {
                                                 <img src={flagImage} alt={movie.original_language} width="30" height="20" className="my-3" />) : (
                                                 <h5 className="card-text">{movie.original_language}</h5>)
                                             }
+                                            <div className="star-rating mt-2">
+                                                {rating.map((star) => (
+                                                    star <= Math.floor(movie.vote_average / 2) ?
+                                                        (<i key={star} className="fa-star me-1 fa-solid text-warning"></i>) :
+                                                        (<i key={star} className="fa-star me-1 fa-regular text-secondary"></i>)
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
 
