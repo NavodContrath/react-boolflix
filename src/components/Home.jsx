@@ -1,7 +1,7 @@
 import { useGlobalContext } from "../contexts/GlobalContext";
 import { showCards } from "../functions/utilities";
 export default function Home() {
-    const { movies, series, topMovies, topSeries, searchResults } = useGlobalContext()
+    const { movies, series, topMovies, topSeries } = useGlobalContext()
 
     return (
         <>

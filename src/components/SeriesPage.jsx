@@ -1,7 +1,6 @@
 import { useGlobalContext } from "../contexts/GlobalContext";
 import { showFlag, showRating } from "../functions/utilities";
 
-
 export default function SeriesPage() {
     const { series } = useGlobalContext()
     return (
