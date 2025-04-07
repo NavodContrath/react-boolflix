@@ -24,8 +24,8 @@ export default function SeriesPage() {
                         series.map(serie => {
                             const flagImage = serieLanguages[serie.original_language];
                             return (
-                                <div className="col-lg-2 h-100">
-                                    <div className="card bg-dark my-3" key={serie.id}>
+                                <div className="col-lg-2 h-100" key={serie.id}>
+                                    <div className="card bg-dark my-3">
                                         <img className="card-img-top" src={`https://image.tmdb.org/t/p/w342` + serie.poster_path} width={"100%"} alt="Title" />
 
                                         <div className="card-body text-white">
