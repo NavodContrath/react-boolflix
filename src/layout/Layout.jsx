@@ -14,7 +14,7 @@ export default function Layout() {
                 <nav className="navbar navbar-expand-sm  bg-dark">
                     <div className="container d-flex align-items-center">
                         <div className="d-flex align-items-baseline">
-                            <NavLink className="navbar-brand" to="/">Booflix</NavLink>
+                            <NavLink className="navbar-brand" id="home" to="/"><img src="https://image.tmdb.org/t/p/w92/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" alt="netflix" /></NavLink>
                             <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/movies">Movies</NavLink>
@@ -37,7 +37,7 @@ export default function Layout() {
             <footer className="py-3 mt-5">
                 <nav className="navbar fixed-bottom  bg-dark">
                     <div className="container-fluid justify-content-start align-items-baseline">
-                        <a className="navbar-brand" href="#">Booflix.inc°</a>
+                        <a className="navbar-brand" href="#">Booflix</a>
                         <ul className="navbar-nav d-flex flex-row">
                             <li className="nav-item">
                                 <a className="nav-link me-3" href="#">Link</a>
