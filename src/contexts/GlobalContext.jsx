@@ -27,6 +27,7 @@ function GlobalProvider({ children }) {
 
     }, [searchQuery])
     console.log(movies)
+    console.log(series)
 
 
     return (
