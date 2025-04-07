@@ -12,9 +12,9 @@ export default function SeriesPage() {
                     {
                         series.map(serie => {
                             return (
-                                <div className="col-lg-2 col-md-4 col-sm-6  h-100" key={serie.id}>
-                                    <div className="card bg-dark my-3">
-                                        <img className="card-img-top" src={(serie.poster_path !== null) ? `https://image.tmdb.org/t/p/w342` + serie.poster_path : "/images/error.jpg"} width={"100%"} alt="Title" />
+                                <div className="col-lg-2 col-md-4 col-sm-6 mb-4 d-flex" key={serie.id}>
+                                    <div className="card bg-dark h-100 w-100">
+                                        <img className="card-img-top img-fluid" src={(serie.poster_path !== null) ? `https://image.tmdb.org/t/p/w342` + serie.poster_path : "/images/error.jpg"} alt="Title" />
                                         <div className="card-body text-white">
                                             <h3 className="card-title">{serie.name}</h3>
                                             <h4 className="card-subtitle">{serie.original_name}</h4>
