@@ -1,9 +1,8 @@
 import { useGlobalContext } from "../contexts/GlobalContext";
-import Languages from "../data/Language";
+import showFlag from "../functions/utilities";
 
 export default function MoviesPage() {
     const { movies } = useGlobalContext()
-
     const rating = [1, 2, 3, 4, 5]
     return (
         <>
@@ -12,7 +11,7 @@ export default function MoviesPage() {
                 <div className="row">
                     {
                         movies.map(movie => {
-                            const flagImage = Languages[movie.original_language];
+
                             return (
                                 <div className="col-lg-2 h-100" key={movie.id}>
                                     <div className="card bg-dark my-3" >
@@ -20,10 +19,7 @@ export default function MoviesPage() {
                                         <div className="card-body text-white">
                                             <h3 className="card-title">{movie.title}</h3>
                                             <h4 className="card-subtitle">{movie.original_title}</h4>
-                                            {flagImage ? (
-                                                <img src={flagImage} alt={movie.original_language} width="30" height="20" className="my-3" />) : (
-                                                <h5 className="card-text">{movie.original_language}</h5>)
-                                            }
+                                            {showFlag(movie)}
                                             <div className="star-rating mt-2">
                                                 {rating.map((star) => (
                                                     star <= Math.ceil(movie.vote_average / 2) ?
