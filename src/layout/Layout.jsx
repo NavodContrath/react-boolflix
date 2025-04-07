@@ -3,7 +3,7 @@ import { useGlobalContext } from "../contexts/GlobalContext";
 import { NavLink } from "react-router-dom";
 
 export default function Layout() {
-    const { moviesName, setMoviesName, setSearchQuery } = useGlobalContext()
+    const { moviesName, setMoviesName, setSearchQuery, movies, series } = useGlobalContext()
     function submitHandler(e) {
         e.preventDefault()
         setSearchQuery(moviesName)
@@ -17,10 +17,10 @@ export default function Layout() {
                             <NavLink className="navbar-brand" id="home" to="/"><img src="https://image.tmdb.org/t/p/w92/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" alt="netflix" /></NavLink>
                             <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/movies">Movies</NavLink>
+                                    <NavLink className={`nav-link ${!movies.length ? "disabled text-secondary" : ""}`} to={movies.length ? "/movies" : "#"}>Movies</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link " to="/series">Series</NavLink>
+                                    <NavLink className={`nav-link ${!series.length ? "disabled text-secondary" : ""}`} to={series.length ? "/series" : "#"}>Series</NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -37,7 +37,7 @@ export default function Layout() {
             <footer className="py-3 mt-5">
                 <nav className="navbar fixed-bottom  bg-dark">
                     <div className="container-fluid justify-content-start align-items-baseline">
-                        <a className="navbar-brand" href="#">Booflix</a>
+                        <a className="navbar-brand" href="#">Netflix</a>
                         <ul className="navbar-nav d-flex flex-row">
                             <li className="nav-item">
                                 <a className="nav-link me-3" href="#">Link</a>
