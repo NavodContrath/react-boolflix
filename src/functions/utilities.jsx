@@ -26,7 +26,4 @@ function showRating(item) {
     )
 }
 
-
-
-
 export { showFlag, showRating }
