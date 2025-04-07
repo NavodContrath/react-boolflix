@@ -15,8 +15,8 @@ export default function MoviesPage() {
                                     <div className="card bg-dark h-100 w-100" >
                                         <img className="card-img-top img-fluid" src={(movie.poster_path !== null) ? `https://image.tmdb.org/t/p/w342` + movie.poster_path : "/images/error.jpg"} alt="Title" />
                                         <div className="card-body text-white">
-                                            <h3 className="card-title">{movie.title}</h3>
-                                            <h4 className="card-subtitle">{movie.original_title}</h4>
+                                            <h5 className="card-title">{movie.title}</h5>
+                                            <h6 className="card-subtitle">{movie.original_title}</h6>
                                             <div className="flag-img mt-2">
                                                 {showFlag(movie)}
                                             </div>

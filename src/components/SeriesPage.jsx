@@ -16,8 +16,8 @@ export default function SeriesPage() {
                                     <div className="card bg-dark h-100 w-100">
                                         <img className="card-img-top img-fluid" src={(serie.poster_path !== null) ? `https://image.tmdb.org/t/p/w342` + serie.poster_path : "/images/error.jpg"} alt="Title" />
                                         <div className="card-body text-white">
-                                            <h3 className="card-title">{serie.name}</h3>
-                                            <h4 className="card-subtitle">{serie.original_name}</h4>
+                                            <h5 className="card-title">{serie.name}</h5>
+                                            <h6 className="card-subtitle">{serie.original_name}</h6>
                                             <div className="flag-img mt-2">
                                                 {showFlag(serie)}
                                             </div>

@@ -34,7 +34,8 @@ function showCards(arr) {
                         <div className="col-lg-4 col-sm-6 mb-4 d-flex" key={card.id}>
                             <div className="card bg-black h-100 w-100" >
                                 <img className="card-img-top img-fluid" src={(card.poster_path !== null) ? `https://image.tmdb.org/t/p/w342` + card.poster_path : "/images/error.jpg"} alt="Title" />
-                                <div className="card-body">
+                                <div className="card-body text-white">
+                                    <h5 className="card-title">{card.title || card.name}</h5>
                                     <div className="flag-img mt-2">
                                         {showFlag(card)}
                                     </div>
