@@ -7,7 +7,7 @@ function showFlag(item) {
             <img src={flagImage} alt={item.original_language} width="30" height="20" className="my-3" />)
     } else {
         return (
-            <h5 className="card-text">{item.original_language}</h5>)
+            <h5 className="card-text text-white">{item.original_language}</h5>)
     }
 }
 
