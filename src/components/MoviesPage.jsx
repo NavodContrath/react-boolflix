@@ -1,18 +1,9 @@
 import { useGlobalContext } from "../contexts/GlobalContext";
+import Languages from "../data/Language";
 
 export default function MoviesPage() {
     const { movies } = useGlobalContext()
-    const movieLanguages = {
-        en: "/images/us.svg",
-        it: "/images/it.svg",
-        fr: "/images/fr.svg",
-        ja: "/images/jp.svg",
-        es: "/images/es.svg",
-        zh: "/images/cn.svg",
-        de: "/images/de.svg",
-        cn: "/images/cn.svg",
-        hi: "/images/in.svg"
-    }
+
     const rating = [1, 2, 3, 4, 5]
     return (
         <>
@@ -21,7 +12,7 @@ export default function MoviesPage() {
                 <div className="row">
                     {
                         movies.map(movie => {
-                            const flagImage = movieLanguages[movie.original_language];
+                            const flagImage = Languages[movie.original_language];
                             return (
                                 <div className="col-lg-2 h-100" key={movie.id}>
                                     <div className="card bg-dark my-3" >
