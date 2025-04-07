@@ -31,9 +31,9 @@ function showCards(arr) {
             {
                 arr.map(card => {
                     return (
-                        <div className="col-lg-3 h-100" key={card.id}>
-                            <div className="card bg-black my-3" >
-                                <img className="card-img-top" src={`https://image.tmdb.org/t/p/w342` + card.poster_path} width={"100%"} alt="Title" />
+                        <div className="col-lg-4 col-sm-6 mb-4 d-flex" key={card.id}>
+                            <div className="card bg-black h-100 w-100" >
+                                <img className="card-img-top img-fluid" src={(card.poster_path !== null) ? `https://image.tmdb.org/t/p/w342` + card.poster_path : "/images/error.jpg"} alt="Title" />
                                 <div className="card-body">
                                     <div className="flag-img mt-2">
                                         {showFlag(card)}

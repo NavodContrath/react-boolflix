@@ -16,9 +16,10 @@ a.navbar-brand{
   color: red !important;
 }
 /* utilities */
-
-
-
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
 /* styling */
 
 header{
