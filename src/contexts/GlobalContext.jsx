@@ -10,7 +10,6 @@ function GlobalProvider({ children }) {
     const [topSeries, setTopSeries] = useState([])
     const [moviesName, setMoviesName] = useState("")
     const [searchQuery, setSearchQuery] = useState("")
-    const [searchResults, setSearchResults] = useState(false)
     const moviesUrl = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${moviesName}`
     const seriesUrl = `https://api.themoviedb.org/3/search/tv?api_key=${api_key}&query=${moviesName}`
 
@@ -31,11 +30,7 @@ function GlobalProvider({ children }) {
             .then(res => res.json())
             .then(data => setTopSeries(data.results))
             .catch(err => console.log(err.message))
-        setSearchResults(true)
     }, [searchQuery])
-    console.log(topSeries)
-    console.log(topMovies)
-
 
     return (
         <GlobalContext.Provider value={{ movies, series, moviesName, setMoviesName, setSearchQuery, topMovies, topSeries }}>
