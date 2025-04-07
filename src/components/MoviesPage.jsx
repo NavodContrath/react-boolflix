@@ -11,9 +11,9 @@ export default function MoviesPage() {
                     {
                         movies.map(movie => {
                             return (
-                                <div className="col-lg-2 h-100" key={movie.id}>
+                                <div className="col-lg-2 col-md-4 col-sm-6 h-100" key={movie.id}>
                                     <div className="card bg-dark my-3" >
-                                        <img className="card-img-top" src={`https://image.tmdb.org/t/p/w342` + movie.poster_path} width={"100%"} alt="Title" />
+                                        <img className="card-img-top" src={(movie.poster_path !== null) ? `https://image.tmdb.org/t/p/w342` + movie.poster_path : "/images/error.jpg"} width={"100%"} alt="Title" />
                                         <div className="card-body text-white">
                                             <h3 className="card-title">{movie.title}</h3>
                                             <h4 className="card-subtitle">{movie.original_title}</h4>
