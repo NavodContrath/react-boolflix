@@ -4,6 +4,10 @@ import { NavLink } from "react-router-dom";
 
 export default function Layout() {
     const { moviesName, setMoviesName, setSearchQuery } = useGlobalContext()
+    function submitHandler(e) {
+        e.preventDefault()
+        setSearchQuery(moviesName)
+    }
 
 
     return (
@@ -24,10 +28,10 @@ export default function Layout() {
                                     <NavLink className="nav-link " to="/series">Series</NavLink>
                                 </li>
                             </ul>
-                            <div className="d-flex">
+                            <form className="d-flex" onSubmit={(e) => submitHandler(e)} >
                                 <input className="form-control me-sm-2" type="text" placeholder="Search" value={moviesName} onChange={(e) => setMoviesName(e.target.value)} />
-                                <button className="btn btn-danger my-2 my-sm-0" type="button" onClick={() => setSearchQuery(moviesName)} >Search</button>
-                            </div>
+                                <button className="btn btn-danger my-2 my-sm-0" type="button" onClick={() => { setSearchQuery(moviesName) }} >Search</button>
+                            </form>
 
                         </div>
                     </div>
