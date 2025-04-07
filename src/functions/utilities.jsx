@@ -25,5 +25,33 @@ function showRating(item) {
         </>
     )
 }
+function showCards(arr) {
+    return (
+        <>
+            {
+                arr.map(card => {
+                    return (
+                        <div className="col-lg-3 h-100" key={card.id}>
+                            <div className="card bg-black my-3" >
+                                <img className="card-img-top" src={`https://image.tmdb.org/t/p/w342` + card.poster_path} width={"100%"} alt="Title" />
+                                <div className="card-body">
+                                    <div className="flag-img mt-2">
+                                        {showFlag(card)}
+                                    </div>
+                                    <div className="star-rating mt-2">
+                                        {showRating(card)}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                })
+            }
 
-export { showFlag, showRating }
+        </>
+    )
+
+
+}
+
+export { showFlag, showRating, showCards }
