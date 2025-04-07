@@ -8,8 +8,6 @@ export default function Layout() {
         e.preventDefault()
         setSearchQuery(moviesName)
     }
-
-
     return (
         <>
             <header >
@@ -40,7 +38,7 @@ export default function Layout() {
             <main>
                 <Outlet />
             </main>
-            <footer className="py-3">
+            <footer className="py-3 mt-5">
                 <nav className="navbar fixed-bottom navbar-expand-sm bg-dark">
                     <div className="container-fluid">
                         <a className="navbar-brand" href="#">Booflix.inc°</a>
@@ -60,8 +58,6 @@ export default function Layout() {
                     </div>
                 </nav>
             </footer>
-
-
         </>
     )
 }
