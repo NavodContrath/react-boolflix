@@ -1,9 +1,9 @@
 import { useGlobalContext } from "../contexts/GlobalContext";
-import showFlag from "../functions/utilities";
+import { showFlag, showRating } from "../functions/utilities";
+
 
 export default function SeriesPage() {
     const { series } = useGlobalContext()
-    const rating = [1, 2, 3, 4, 5]
     return (
         <>
             <div className="container my-5">
@@ -18,13 +18,11 @@ export default function SeriesPage() {
                                         <div className="card-body text-white">
                                             <h3 className="card-title">{serie.name}</h3>
                                             <h4 className="card-subtitle">{serie.original_name}</h4>
-                                            {showFlag(serie)}
+                                            <div className="flag-img mt-2">
+                                                {showFlag(serie)}
+                                            </div>
                                             <div className="star-rating mt-2">
-                                                {rating.map((star) => (
-                                                    star <= Math.ceil(serie.vote_average / 2) ?
-                                                        (<i key={star} className="fa-star me-1 fa-solid text-warning"></i>) :
-                                                        (<i key={star} className="fa-star me-1 fa-regular text-secondary"></i>)
-                                                ))}
+                                                {showRating(serie)}
                                             </div>
                                         </div>
                                     </div>
