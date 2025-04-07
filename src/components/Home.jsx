@@ -1,29 +1,62 @@
+import { useGlobalContext } from "../contexts/GlobalContext";
+import { showFlag, showRating } from "../functions/utilities";
 export default function Home() {
+    const { movies, series } = useGlobalContext()
+
     return (
         <>
             <div className="container p-5">
                 <div className="row align-items-md-stretch">
                     <div className="col-md-6">
-                        <div className="h-100 p-5 text-white bg-dark border rounded-3">
-                            <h2>Welcome to Booflix</h2>
-                            <p>
-                                Swap the background-color utility and add a `.text-*` color
-                                utility to mix up the jumbotron look. Then, mix and match with
-                                additional component themes and more.
-                            </p>
-                            <button className="btn btn-outline-danger" type="button">Example button</button>
+                        <h2>Movies</h2>
+                        <div className="h-100 p-5 bg-dark border rounded-3 text-white">
+                            <div className="row">
+                                {
+                                    movies.map(movie => {
+                                        return (
+                                            <div className="col-lg-3 h-100" key={movie.id}>
+                                                <div className="card bg-black my-3" >
+                                                    <img className="card-img-top" src={`https://image.tmdb.org/t/p/w342` + movie.poster_path} width={"100%"} alt="Title" />
+                                                    <div className="card-body">
+                                                        <div className="flag-img mt-2">
+                                                            {showFlag(movie)}
+                                                        </div>
+                                                        <div className="star-rating mt-2">
+                                                            {showRating(movie)}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
                         </div>
                     </div>
                     <div className="col-md-6">
-                        <div className="h-100 p-5 bg-dark border rounded-3 text-white">
-                            <h2>Movies for you</h2>
-                            <p>
-                                Or, keep it light and add a border for some added definition
-                                to the boundaries of your content. Be sure to look under the
-                                hood at the source HTML here as we've adjusted the alignment and
-                                sizing of both column's content for equal-height.
-                            </p>
-                            <button className="btn btn-outline-danger " type="button">Example button</button>
+                        <h2>Series</h2>
+                        <div className="h-100 p-5 bg-dark border rounded-3 text-white mb-3">
+                            <div className="row">
+                                {
+                                    series.map(serie => {
+                                        return (
+                                            <div className="col-lg-3 h-100" key={serie.id}>
+                                                <div className="card bg-black my-3" >
+                                                    <img className="card-img-top" src={`https://image.tmdb.org/t/p/w342` + serie.poster_path} width={"100%"} alt="Title" />
+                                                    <div className="card-body">
+                                                        <div className="flag-img mt-2">
+                                                            {showFlag(serie)}
+                                                        </div>
+                                                        <div className="star-rating mt-2">
+                                                            {showRating(serie)}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
