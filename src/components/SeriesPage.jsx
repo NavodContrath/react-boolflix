@@ -37,7 +37,7 @@ export default function SeriesPage() {
                                             }
                                             <div className="star-rating mt-2">
                                                 {rating.map((star) => (
-                                                    star <= Math.floor(serie.vote_average / 2) ?
+                                                    star <= Math.ceil(serie.vote_average / 2) ?
                                                         (<i key={star} className="fa-star me-1 fa-solid text-warning"></i>) :
                                                         (<i key={star} className="fa-star me-1 fa-regular text-secondary"></i>)
                                                 ))}

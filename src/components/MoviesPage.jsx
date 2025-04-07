@@ -35,7 +35,7 @@ export default function MoviesPage() {
                                             }
                                             <div className="star-rating mt-2">
                                                 {rating.map((star) => (
-                                                    star <= Math.floor(movie.vote_average / 2) ?
+                                                    star <= Math.ceil(movie.vote_average / 2) ?
                                                         (<i key={star} className="fa-star me-1 fa-solid text-warning"></i>) :
                                                         (<i key={star} className="fa-star me-1 fa-regular text-secondary"></i>)
                                                 ))}
