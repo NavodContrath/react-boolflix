@@ -1,7 +1,7 @@
 import { useGlobalContext } from "../contexts/GlobalContext";
 import { showCards } from "../functions/utilities";
 export default function Home() {
-    const { movies, series, topMovies, topSeries } = useGlobalContext()
+    const { movies, series, topMovies, topSeries, moviesName } = useGlobalContext()
 
     return (
         <>
@@ -21,11 +21,11 @@ export default function Home() {
                     </div>
                 </div>
 
-                <h2 className="text-white mt-5 mb-3">Top rated Movies</h2>
+                <h2 className="text-white mt-5 mb-3">{movies && movies.length > 0 ? moviesName.charAt(0).toUpperCase() + moviesName.slice(1) : "Top rated movies"}</h2>
                 <div className="row">
                     {movies && movies.length > 0 ? showCards(movies) : showCards(topMovies)}
                 </div>
-                <h2 className="text-white mt-5 mb-3">Top rated Series</h2>
+                <h2 className="text-white mt-5 mb-3">{series && series.length > 0 ? moviesName.charAt(0).toUpperCase() + moviesName.slice(1) : "Top rated series"}</h2>
                 <div className="row">
                     {series && series.length > 0 ? showCards(series) : showCards(topSeries)}
                 </div>
