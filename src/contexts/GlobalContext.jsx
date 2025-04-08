@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 const api_key = import.meta.env.VITE_MOVIE_DB_API_KEY;
 const GlobalContext = createContext()
-console.log(api_key)
 
 function GlobalProvider({ children }) {
     const [movies, setMovies] = useState([])
